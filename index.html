@@ -1,0 +1,205 @@
+<doctype html>
+	<html lan="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title> Projeto Horta Vida e resistência</title>
+
+		<style>
+			header{
+				font-family: Cursive Script;
+				font-size: 34px;
+				font-weight: bolder;
+				text-align: center;
+				color:white;
+				background-color: #006400;
+
+				background-size: cover;
+        }#nav {
+            background-color: #444;
+            text-align: center;
+            margin-top: 10px;
+            padding: 10px 0;
+        }
+        
+        #nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 20px;
+            font-size: 20px;
+        }
+        
+        #nav a:hover {
+            background-color: #555;
+        }body{
+				background-color:black;
+				font-family: cursive;
+				font-size:20px;
+				color: green;
+				text-align: center;
+		}h2, h2, h3, h4, h5, h6 {
+            font-size: 25px; /* Define o tamanho de fonte padrão para o <h2> */
+        }
+        .destaque {
+            font-size: 39px; /* Define o tamanho de fonte maior para o texto destacado */
+		}table{
+			background-color:black;
+				font-family: cursive;
+				font-size:16px;
+				color: green;
+				text-align: center;
+		}
+</style>
+
+	</head>
+	<body>
+
+		<header>
+			<h1>Projeto Horta Vida e Resistência</h1>
+			<h2>vida, saúde, sustentabilidade, aprendizado, resiliência e resistência através da arte, horta, cultura e troca de sabedorias.   </h2>
+		</header>
+
+
+
+
+			 <div id="nav">
+		<a href="#inicio">Inicio</a>
+        <a href="#info">Informações e comentários sobre plantas</a>
+        <a href="#artes">Artes</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#encontros">Encontros</a>
+        <a href="#contato">Contato</a>
+        <a href="#patrocinadores">Patrocinadores</a>
+    </div>
+    </table>
+
+    <div id="imagem-container">
+    <!-- A imagem aleatória de plantas e jardins será exibida aqui -->
+    <img id="planta-imagem" src="" alt="Imagem de Planta ou Jardim">
+</div>
+
+<script>
+// Sua chave de API do Pexels
+const apiKey = 'PYRGuLpviaB1Xr5ymwclST3oL5rubJDzrMdkHDeI0nB2vIev4w2PgdnN';
+
+function carregarImagemAleatoria() {
+    var imagemElement = document.getElementById("planta-imagem");
+
+    // Palavras-chave para buscar imagens de plantas e jardins
+    const palavrasChave = ['plant', 'garden','sage',"river", "nature"];
+
+    // Escolha aleatoriamente uma das palavras-chave
+    const palavraChaveAleatoria = palavrasChave[Math.floor(Math.random() * palavrasChave.length)];
+
+    // Construa a URL da imagem aleatória de plantas e jardins do Pexels
+    var url = `https://api.pexels.com/v1/search?query=${palavraChaveAleatoria}&per_page=1&page=${Math.floor(Math.random() * 100) + 1}`;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.setRequestHeader("Authorization", apiKey);
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            var data = JSON.parse(xhr.responseText);
+            var imageUrl = data.photos[0].src.large;
+
+            // Atualize a imagem
+            imagemElement.src = imageUrl;
+        } else {
+            console.log("Erro ao carregar a imagem: " + xhr.status);
+        }
+    };
+
+    xhr.onerror = function () {
+        console.log("Erro de rede ao tentar fazer a solicitação.");
+    };
+
+    xhr.send();
+}
+
+// Carregue uma imagem aleatória quando a página carregar
+carregarImagemAleatoria();
+
+// Atualize a imagem a cada 3 segundos (3000 milissegundos)
+setInterval(carregarImagemAleatoria, 4000);
+</script>
+
+	<body>
+		
+
+
+		<h1 id="inicio">
+			<br><br>
+		Sejam muito bem vindos.Em breve nosso conteudo estara aqui. Fotos, videos, bate papos, agenda de eventos, encontro, informações de plantas por tema e tipo e muito mais.</h1>
+		<br><br>
+		
+
+		<h2 id="info">
+			<br><br>
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSDOF_6CmCl1a3lBYr5OZDoT61MyugAga0tA&usqp=CAU">
+		
+		<br><br>
+		<span class="destaque">Informacões e comentarios sobre plantas</span>
+			<br><br>
+		</h2>
+		<br><br>
+
+		<h3>
+		<img src="https://media-manager.noticiasaominuto.com.br/1920/naom_5acb7c680c679.jpg" width="300">
+		<br><br>
+
+	<span class="destaque"> Alecrim: </span>
+			<br>
+		Òtimo aroma, bom pra cabeça.
+		<br><br>
+	</h3>
+	<br><br>
+
+		<h4>
+			<br><br>
+		<img src="https://cdn.awsli.com.br/800x800/1539/1539472/produto/108823187/a8bc84fb2f.jpg"width="300">
+		<br><br>
+		<span class="destaque">* Bálsamo: </span>
+		<br><br>
+		ótimo para o estomago!
+		<br><br>
+	</h4>
+	<br><br>
+
+	<h5 id="contato">
+		<br><br><br><br><br><br>
+		<span class="destaque">* Contato: </span>
+		Telefone para informações e agendamentos:31 98231-6919. 
+		Richard.
+		whatsapp: 31 98231-6919
+
+		instagram @richardrockwater.
+		<br><br>
+
+		</h5>
+		<br><br>
+
+		<h6 id="patrocinadores">
+		<span class="destaque"><br>* Patrocinadores:<br>
+		<br>* Montador de móveis BHZ.<br></span>
+		<br>
+		Montagem de móveis, desmontagem, instalações e serviços comerciais e residenciais.
+		<br>
+		Belo horizonte e regiao metropolitana.
+		<br> orçamentos pelo telefone ou whatsapp: 31 98102-3629. Richard.
+		<br>
+		Profissionais de confiança, parceiros sustentaveis e patrocinadores do projeto horta vida e resistencia.
+
+		</h6>
+		<br><br>
+
+	</body>
+	<img src="https://avatars.githubusercontent.com/u/136639623?s=400&u=3f611f9906e3a1186f12cb632476a587891aabab&v=4">
+		
+		
+
+		<footer>
+    <h2>Contato:31-98231-6919<br></h2>
+    
+    <p>&copy; 2023 Richard Rodrigues. Todos os direitos reservados.</p>
+</footer>
+	</html>
